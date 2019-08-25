@@ -58,8 +58,9 @@ public class Player {
 		} else {
 			if (userChoice.equals("y")) {
 				System.out.println("Let´s start playing!. \n");
-				System.out.println("You´re about to get in " + world.x + " x " + world.y + " cell board. \n");
-				System.out.println("Your start line is in the top-left fist cell. Position starts at 0. \n");
+				System.out.println("You´re in a " + world.x + " x " + world.y + " cell board. \n");
+				System.out.println("Your start line is in the top-left first cell. You are in cell number 0. \n");
+				System.out.println("You are in cell number 0. \n");
 				
 				world.getNeighbors(world.userIndexPosition, world.userXPosition, world.userYPosition);
 			} else {

@@ -51,21 +51,22 @@ public class WumpusWorld {
 			 if(neighborsIndexPosition[i] > 0) {
 				switch(placeElements().get(neighborsIndexPosition[i])) {
 				  case "PIT":
-					  System.out.println("The breeze is noticeable, a deep pit is so close from you...\n");
+					  System.out.println("The breeze is noticeable, a deep pit is so close from you...");
+					  System.out.println("Pit is in cell number " + neighborsIndexPosition[i] + "\n");
 					  break;
 				  case "WUMPUS":
-					  System.out.println("There's a strange stench near from you ...\n");
+					  System.out.println("There's a strange stench near from you ...");
+					  System.out.println("Be careful Wumpus is in cell  number " + neighborsIndexPosition[i] + "\n");
 					  break;
 				  case "GOLD":
-					  System.out.println("I can see the gold shining near ...\n");
+					  System.out.println("I can see the gold shining near ...");
+					  System.out.println("Yes! Gold is in cell number " + neighborsIndexPosition[i] + "\n");
 					  break;
-				  default:
-					 System.out.println("Your neighbors are safe, keep going. \n");
 				}
-
-				 player.getUserDirection(index, xPosition, yPosition);
 			 }
 		}
+		
+		 player.getUserDirection(index, xPosition, yPosition);
 	}
 	
 	/**
@@ -80,7 +81,7 @@ public class WumpusWorld {
 			  yPosition +=  h;
 			  index -= y;
 			  System.out.println("Your are in cell number: " + index);
-			  System.out.println("x: " + xPosition + " y: " + yPosition);
+			  System.out.println("x: " + xPosition + " y: " + yPosition + "\n");
 			  checkBoardLimits(direction, prevYPosition, index, xPosition, yPosition);
 		    break;
 		  case "EAST":
@@ -89,7 +90,7 @@ public class WumpusWorld {
 			  xPosition += w;
 			  index += 1;
 			  System.out.println("Your are in cell number: " + index);
-			  System.out.println("x: " + xPosition + " y: " + yPosition);
+			  System.out.println("x: " + xPosition + " y: " + yPosition+ "\n");
 			  checkBoardLimits(direction, prevXPosition, index, xPosition, yPosition);
 			 break;
 		  case "SOUTH": 
@@ -98,7 +99,7 @@ public class WumpusWorld {
 			  yPosition -= h;
 			  index += y;
 			  System.out.println("Your are in cell number: " + index);
-			  System.out.println("x: " + xPosition + " y: " + yPosition);
+			  System.out.println("x: " + xPosition + " y: " + yPosition+ "\n");
 			  checkBoardLimits(direction, prevYPosition, index, xPosition, yPosition);
 			 break;
 		  case "WEST":
@@ -107,7 +108,7 @@ public class WumpusWorld {
 			  xPosition -= w;		  
 			  index -= 1;
 			  System.out.println("Your are in cell number: " + index);
-			  System.out.println("x: " + xPosition + " y: " + yPosition);
+			  System.out.println("x: " + xPosition + " y: " + yPosition+ "\n");
 			  checkBoardLimits(direction, prevXPosition, index, xPosition, yPosition);
 			 break;
 		}
@@ -188,8 +189,7 @@ public class WumpusWorld {
 		  default:
 			  System.out.println("Everything it´s fine, let´s check your neighbors.\n");
 			  getNeighbors(index, xPosition, yPosition);
-		}
-		
+		}	
 	}
 
 	/**
