@@ -137,7 +137,6 @@ public class WumpusWorld {
 			  }
 		    break;
 		  case "SOUTH":
-			  System.out.println(yPosition);
 			  if(yPosition <= 0) {
 				  yPosition = prevPosition;
 				  limitWarning(index, xPosition, yPosition);				 
