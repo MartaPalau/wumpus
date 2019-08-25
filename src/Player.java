@@ -59,7 +59,7 @@ public class Player {
 			if (userChoice.equals("y")) {
 				System.out.println("Let´s start playing!. \n");
 				System.out.println("You´re about to get in " + world.x + " x " + world.y + " cell board. \n");
-				System.out.println("Your start line is in the top-left fist cell. \n");
+				System.out.println("Your start line is in the top-left fist cell. Position starts at 0. \n");
 				
 				world.getNeighbors(world.userIndexPosition, world.userXPosition, world.userYPosition);
 			} else {
@@ -93,13 +93,5 @@ public class Player {
 			world.setUserPosition(userChoice, index, xPosition, yPosition);
 		}
 		
-	}
-	
-	/**
-	 * 
-	 *End of game
-	 */
-	public void endOfGame() {
-		System.out.println("Bye..\n");		
 	}
 }

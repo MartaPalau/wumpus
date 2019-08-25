@@ -26,7 +26,7 @@ public class WumpusWorld {
 		this.w = widh;
 		this.x = xElements;
 		this.y = yElements;
-		this.userIndexPosition = 1;
+		this.userIndexPosition = 0;
 		this.userXPosition = 0;
 		this.userYPosition = this.y * this.h;
 	}
@@ -49,20 +49,21 @@ public class WumpusWorld {
 		for (int i = 0; i < neighborsIndexPosition.length; i++) {
 			
 			 if(neighborsIndexPosition[i] > 0) {
-				switch(placeElements().get(neighborsIndexPosition[i]-1)) {
+				switch(placeElements().get(neighborsIndexPosition[i])) {
 				  case "PIT":
 					  System.out.println("The breeze is noticeable, a deep pit is so close from you...\n");
-					  player.getUserDirection(index, xPosition, yPosition);
+					  break;
 				  case "WUMPUS":
 					  System.out.println("There's a strange stench near from you ...\n");
-					  player.getUserDirection(index, xPosition, yPosition);
+					  break;
 				  case "GOLD":
 					  System.out.println("I can see the gold shining near ...\n");
-					  player.getUserDirection(index, xPosition, yPosition);
+					  break;
 				  default:
-					System.out.println("Your neighbors are safe, keep going. \n");
-					player.getUserDirection(index, xPosition, yPosition);
+					 System.out.println("Your neighbors are safe, keep going. \n");
 				}
+
+				 player.getUserDirection(index, xPosition, yPosition);
 			 }
 		}
 	}
@@ -90,7 +91,7 @@ public class WumpusWorld {
 			  System.out.println("Your are in cell number: " + index);
 			  System.out.println("x: " + xPosition + " y: " + yPosition);
 			  checkBoardLimits(direction, prevXPosition, index, xPosition, yPosition);
-		    break;
+			 break;
 		  case "SOUTH": 
 			  prevYPosition = yPosition;
 			  prevIndex = index;
@@ -99,7 +100,7 @@ public class WumpusWorld {
 			  System.out.println("Your are in cell number: " + index);
 			  System.out.println("x: " + xPosition + " y: " + yPosition);
 			  checkBoardLimits(direction, prevYPosition, index, xPosition, yPosition);
-			    break;
+			 break;
 		  case "WEST":
 			  prevXPosition = xPosition;
 			  prevIndex = index;
@@ -108,7 +109,7 @@ public class WumpusWorld {
 			  System.out.println("Your are in cell number: " + index);
 			  System.out.println("x: " + xPosition + " y: " + yPosition);
 			  checkBoardLimits(direction, prevXPosition, index, xPosition, yPosition);
-			  break;
+			 break;
 		}
 	}
 	
@@ -174,20 +175,15 @@ public class WumpusWorld {
 	 */
 	public void checkCurrenUserPosition(int index, int xPosition, int yPosition) {
 		
-		Player player = new Player();
-		
-		switch(placeElements().get(index-1)) {
+		switch(placeElements().get(index)) {
 		  case "PIT":
 			  System.out.println("Ups, you felt into a deep pit...bye");
-			  player.endOfGame();
 		    break;
 		  case "WUMPUS":
 			  System.out.println("GAME OVER...WUMPUS catch you...bye");
-			  player.endOfGame();
 		    break;
 		  case "GOLD":
 			  System.out.println("YOU WIN!");
-			  player.endOfGame();
 			 break;
 		  default:
 			  System.out.println("Everything it´s fine, let´s check your neighbors.\n");
