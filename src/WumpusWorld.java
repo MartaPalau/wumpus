@@ -49,18 +49,21 @@ public class WumpusWorld {
 		for (int i = 0; i < neighborsIndexPosition.length; i++) {
 			
 			 if(neighborsIndexPosition[i] > 0) {
+				 
+				int elementIndex =  placeElements().indexOf(placeElements().get(neighborsIndexPosition[i]));
+				
 				switch(placeElements().get(neighborsIndexPosition[i])) {
 				  case "PIT":
 					  System.out.println("The breeze is noticeable, a deep pit is so close from you...");
-					  System.out.println("Pit is in cell number " + neighborsIndexPosition[i] + "\n");
+					  System.out.println("Pit is in cell number " + elementIndex + "\n");
 					  break;
 				  case "WUMPUS":
 					  System.out.println("There's a strange stench near from you ...");
-					  System.out.println("Be careful Wumpus is in cell  number " + neighborsIndexPosition[i] + "\n");
+					  System.out.println("Be careful Wumpus is in cell  number " + elementIndex + "\n");
 					  break;
 				  case "GOLD":
 					  System.out.println("I can see the gold shining near ...");
-					  System.out.println("Yes! Gold is in cell number " + neighborsIndexPosition[i] + "\n");
+					  System.out.println("Yes! Gold is in cell number " + elementIndex + " keep going and grab it! \n");
 					  break;
 				}
 			 }
@@ -210,7 +213,6 @@ public class WumpusWorld {
 			}
 			Collections.shuffle(board);
 		} 
-		
 		return board;
 	}
 	
