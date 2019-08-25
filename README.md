@@ -13,9 +13,11 @@ MARTA PALAU WUMPUS GAME
 
 You´re about to get in n x n cell board. 
 
+You can define the size of cells & number of cells in Player.java class.
+
 Your start line is in the top-left fist cell. 
 
-You can go forward only  one cell at a time.
+You can go forward only one cell at a time.
 
 Game will ask you to choose direction (North, South, East, West).
 

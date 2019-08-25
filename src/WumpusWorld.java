@@ -51,13 +51,13 @@ public class WumpusWorld {
 			 if(neighborsIndexPosition[i] > 0) {
 				switch(placeElements().get(neighborsIndexPosition[i]-1)) {
 				  case "PIT":
-					  System.out.println("The breeze is noticeable, a deep pit is so close from you...");
+					  System.out.println("The breeze is noticeable, a deep pit is so close from you...\n");
 					  player.getUserDirection(index, xPosition, yPosition);
 				  case "WUMPUS":
-					  System.out.println("There's a strange stench near from you ...");
+					  System.out.println("There's a strange stench near from you ...\n");
 					  player.getUserDirection(index, xPosition, yPosition);
 				  case "GOLD":
-					  System.out.println("I can see the gold shining near ...");
+					  System.out.println("I can see the gold shining near ...\n");
 					  player.getUserDirection(index, xPosition, yPosition);
 				  default:
 					System.out.println("Your neighbors are safe, keep going. \n");
@@ -190,7 +190,7 @@ public class WumpusWorld {
 			  player.endOfGame();
 			 break;
 		  default:
-			  System.out.println("Everything it큦 fine, let큦 check your neighbors.");
+			  System.out.println("Everything it큦 fine, let큦 check your neighbors.\n");
 			  getNeighbors(index, xPosition, yPosition);
 		}
 		

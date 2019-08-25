@@ -100,11 +100,6 @@ public class Player {
 	 *End of game
 	 */
 	public void endOfGame() {
-		System.out.println("Do you want to play again?");
-		System.out.println("Bye..");
-		WumpusWorld.board = null;
-		playerSetUp();
-		
+		System.out.println("Bye..\n");		
 	}
-	
 }
