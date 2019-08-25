@@ -36,21 +36,18 @@ public class WumpusWorld {
 	 * Check neighbors to know which element is near from user position
 	 */
 	public void getNeighbors(int index, int xPosition, int yPosition) {
-		
-		Player player = new Player();
-		
 		int north = index - y;
 		int south = index + y;
 		int west = index - 1;
 		int east = index + 1;
 
-		int[] neighborsIndexPosition = new int[]{north,south,west,east,index}; 
+		int[] neighborsIndexPosition = new int[]{north,south,west,east}; 
 		
 		for (int i = 0; i < neighborsIndexPosition.length; i++) {
 			
-			 if(neighborsIndexPosition[i] > 0) {
+			 if(neighborsIndexPosition[i] > 0 && neighborsIndexPosition[i] <= placeElements().size()-1) {
 				 
-				int elementIndex =  placeElements().indexOf(placeElements().get(neighborsIndexPosition[i]));
+				int elementIndex = placeElements().indexOf(placeElements().get(neighborsIndexPosition[i]));
 				
 				switch(placeElements().get(neighborsIndexPosition[i])) {
 				  case "PIT":
@@ -69,7 +66,8 @@ public class WumpusWorld {
 			 }
 		}
 		
-		 player.getUserDirection(index, xPosition, yPosition);
+		Player player = new Player();
+		player.getUserDirection(index, xPosition, yPosition);
 	}
 	
 	/**

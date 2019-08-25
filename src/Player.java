@@ -59,7 +59,7 @@ public class Player {
 			if (userChoice.equals("y")) {
 				System.out.println("Let´s start playing!. \n");
 				System.out.println("You´re in a " + world.x + " x " + world.y + " cell board. \n");
-				System.out.println("Your start line is in the top-left first cell. You are in cell number 0. \n");
+				System.out.println("Your start line is in the top-left first cell.\n");
 				System.out.println("You are in cell number 0. \n");
 				
 				world.getNeighbors(world.userIndexPosition, world.userXPosition, world.userYPosition);
