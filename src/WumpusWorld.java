@@ -161,12 +161,12 @@ public class WumpusWorld {
 	 * Warn user & reset position
 	 */
 	public void limitWarning(int index, int xPosition, int yPosition) {
-		
 		Player player = new Player();
+		index = prevIndex;
 		
 		System.out.println("Ups, you hit the wall!. \n");
-		index = prevIndex;
 		System.out.println("Let´s come back. You´re in cell number " + prevIndex + " again. \n");
+		
 		player.getUserDirection(index, xPosition, yPosition);
 	}
 	
@@ -175,7 +175,6 @@ public class WumpusWorld {
 	 * Check if user position is out of board
 	 */
 	public void checkCurrenUserPosition(int index, int xPosition, int yPosition) {
-		
 		switch(placeElements().get(index)) {
 		  case "PIT":
 			  System.out.println("Ups, you felt into a deep pit...bye");
@@ -198,7 +197,6 @@ public class WumpusWorld {
 	 */
 	public List<String> placeElements() {
 		elements = new String[]{ "WUMPUS","GOLD","PIT"}; 
-		
 		if(board == null) {
 			board = new ArrayList<>();
 			
@@ -211,7 +209,7 @@ public class WumpusWorld {
 			}
 			Collections.shuffle(board);
 		} 
+		
 		return board;
 	}
-	
 }
