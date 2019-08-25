@@ -164,9 +164,9 @@ public class WumpusWorld {
 		
 		Player player = new Player();
 		
-		System.out.println("Ups, you hit the wall!");
+		System.out.println("Ups, you hit the wall!. \n");
 		index = prevIndex;
-		
+		System.out.println("Let´s come back. You´re in cell number " + prevIndex + " again. \n");
 		player.getUserDirection(index, xPosition, yPosition);
 	}
 	
