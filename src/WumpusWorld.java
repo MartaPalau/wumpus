@@ -196,7 +196,7 @@ public class WumpusWorld {
 	 *Create random list to allocate elements (WUMPUS, GOLD, PIT, EMPTY) 
 	 */
 	public List<String> placeElements() {
-		// TODO:review random array to avoid place elements in 0 prosition
+		// TODO:review random array to avoid place elements in 0 position
 		
 		elements = new String[]{ "WUMPUS","GOLD","PIT"}; 
 		if(board == null) {
